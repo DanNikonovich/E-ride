@@ -3,38 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Header Updated</title>
+  <title>E-ride</title>
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Анимации заднего фона -->
-  <div class="bg-anim">
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-    <div class="bg-shape"></div>
-  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="header-wrap">
+      <a class="logo" href="/" aria-label="E-RIDE">
+        <img src="components/logo.png" alt="E-RIDE">
+      </a>
 
-  <header class="site-header">
-    <nav class="menu">
+      <nav class="nav nav-left" aria-label="Основная навигация">
+        <a class="nav-link" href="#promo">Акции</a>
+        <a class="nav-link" href="#rules">Правила</a>
+      </nav>
 
-      <a href="/sales.html">Акции</a>
-      <a href="/rules.html">Правила</a>
-      <!-- ЛОГО ПОСЕРЕДИНЕ -->
-      <div class="logo-wrap">
-        <img src="img/logo.png" alt="Logo" />
-      </div>
+      <nav class="nav nav-right" aria-label="Доп. навигация">
+        <div class="dropdown" data-dropdown>
+          <button class="nav-link nav-btn" type="button" data-dropdown-btn aria-expanded="false">
+            Контакты
+            <img class="nav-arrow" src="components/svg/Cont_down.svg" alt="" aria-hidden="true">
+          </button>
 
-      <div class="contacts-wrap">
-        <a href="#footer">Контакты</a>
-        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg>
-        <div class="dropdown">Пн–Вс 10:00–22:00</div>
-      </div>
+          <div class="dropdown-menu" data-dropdown-menu role="menu">
+            <a role="menuitem" href="#contacts">Контакты</a>
+            <a role="menuitem" href="#map">Как добраться</a>
+            <a role="menuitem" href="#support">Поддержка</a>
+          </div>
+        </div>
 
-      <a href="/booking.html">Бронь</a>
-
-    </nav>
+        <a class="nav-link" href="#booking">Бронь</a>
+      </nav>
+    </div>
   </header>
 
 </body>
