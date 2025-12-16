@@ -47,8 +47,59 @@
 
         <a class="nav-link" href="#booking">Бронь</a>
       </nav>
+      <button class="burger"
+              type="button"
+              aria-label="Открыть меню"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Menu -->
+  <div class="mnav" id="mobileMenu" aria-hidden="true">
+    <div class="mnav__panel" role="dialog" aria-modal="true" aria-label="Меню">
+      <button class="mnav__close" type="button" aria-label="Закрыть меню">×</button>
+
+      <div class="mnav__grid">
+        <nav class="mnav__col" aria-label="Разделы">
+          <a href="#promo">АКЦИИ</a>
+          <a href="#rules">ПРАВИЛА</a>
+          <a href="#booking">БРОНЬ</a>
+          <a href="#contacts">КОНТАКТЫ</a>
+        </nav>
+
+        <div class="mnav__col mnav__info" aria-label="Информация">
+          <div class="mnav__phone">+375 (29) 77-87-397</div>
+
+          <div class="mnav__social">
+            <a class="mnav__soc" href="#" aria-label="Telegram">T</a>
+            <a class="mnav__soc" href="#" aria-label="Instagram">I</a>
+            <a class="mnav__soc" href="#" aria-label="TikTok">D</a>
+          </div>
+
+          <div class="mnav__work">
+            <div class="mnav__work-title">ВРЕМЯ РАБОТЫ</div>
+            <div class="mnav__work-row">
+              <span class="mnav__badge">Пн</span>
+              <span>Выходной</span>
+            </div>
+            <div class="mnav__work-row">
+              <span class="mnav__badge">Вт–Вс</span>
+              <span>10:00 – 20:00</span>
+            </div>
+          </div>
+
+          <div class="mnav__address">
+            ул. Максима Горького, 101
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" aria-label="Герой секция">
@@ -69,6 +120,7 @@
   </section>
 
   <!-- JS отдельным файлом -->
+   <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
 </body>
 </html>

@@ -42,6 +42,7 @@ a{ color:inherit; }
 
 /* ==============================================Header============================================== */
 
+:root{ --menu-fs: 30px; }
 .site-header{
   position: absolute;
   top: 10px;
@@ -135,17 +136,20 @@ a{ color:inherit; }
 
 /* ===== CSS-стрелка вместо SVG ===== Цвет берётся из currentColor (т.е. как цвет "Контакты") */
 .contacts__arrow{
-  width: 10px;
-  height: 10px;
   display: inline-block;
+
+  width: calc(var(--menu-fs) * 0.33);
+  height: calc(var(--menu-fs) * 0.33);
 
   border-right: 3px solid currentColor;
   border-bottom: 3px solid currentColor;
+
   transform: rotate(45deg);          /* вниз */
   transform-origin: 50% 50%;
   transition: transform .18s ease, border-color .18s ease;
   opacity: .95;
 }
+
 
 /* "противоположное направление" при hover (вверх) */
 .contacts:hover .contacts__arrow{
@@ -246,6 +250,165 @@ a{ color:inherit; }
   color: rgba(255,255,255,.9);
 }
 
+/* ========== Бургер кнопка ========== */
+.burger{
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.burger span{
+  width: 26px;
+  height: 2px;
+  background: rgba(255,255,255,.9);
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* активное состояние */
+body.menu-open .burger span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+body.menu-open .burger span:nth-child(2){ opacity: 0; }
+body.menu-open .burger span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+/* ========== Мобильное меню (оверлей) ========== */
+.mnav{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, visibility 0s linear .18s;
+  z-index: 2000;
+}
+
+body.menu-open .mnav{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity .18s ease, visibility 0s;
+}
+
+.mnav__panel{
+  height: 100%;
+  width: 100%;
+  background: rgba(15,15,15,.95);
+  box-shadow: 0 30px 90px rgba(0,0,0,.7);
+  position: relative;
+  padding: 22px 18px;
+}
+
+.mnav__close{
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.9);
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* сетка как в примере: 2 колонки на телефоне можно оставить 1 */
+.mnav__grid{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+/* шрифт везде Jura */
+.mnav a,
+.mnav__phone,
+.mnav__work-title,
+.mnav__address,
+.mnav__work-row span{
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+
+.mnav__col a{
+  display: block;
+  text-decoration: none;
+  color: rgba(255,255,255,.88);
+  font-size: 18px;
+  padding: 10px 0;
+  transition: color .15s ease;
+}
+
+.mnav__col a:hover{
+  color: #01FF01;
+}
+
+/* телефон */
+.mnav__phone{
+  font-size: 22px;
+  color: rgba(255,255,255,.92);
+  margin-bottom: 14px;
+}
+
+/* соц кружки (можешь заменить на svg/иконки) */
+.mnav__social{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mnav__soc{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #01FF01;
+  color: #000;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+}
+
+/* блок времени работы */
+.mnav__work-title{
+  font-size: 14px;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 10px;
+}
+
+.mnav__work-row{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.mnav__badge{
+  background: #01FF01;
+  color: #000;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.mnav__address{
+  margin-top: 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,.78);
+}
+
 /* ==============================================Hero============================================== */
 
 :root{
@@ -283,7 +446,7 @@ a{ color:inherit; }
 
 /* Когда добавим класс из JS — включаем анимацию “в цвет” */
 .hero.is-animating .hero__bg{
-  animation: heroColorize 10s ease forwards;
+  animation: heroColorize 5s ease forwards;
 }
 
 @keyframes heroColorize{
@@ -310,7 +473,7 @@ a{ color:inherit; }
 
 /* Одновременно двигаем и проявляем */
 .hero.is-animating .hero__content{
-  animation: heroTextIn 1.2s cubic-bezier(.2,.9,.2,1) forwards;
+  animation: heroTextIn 5s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
 @keyframes heroTextIn{
@@ -369,8 +532,7 @@ a{ color:inherit; }
   display: block;
 }
 
-
-/* =======================Adaptive======================= */
+/* ==============================================Adaptive============================================== */
 @media (max-width: 1200px){
   .hero__content{ left: 24px; bottom: 64px; }
   .hero__title{ font-size: 52px; }
@@ -382,4 +544,56 @@ a{ color:inherit; }
   .logo img{ height: 34px; }
   .hero{ padding-bottom: 84px; }
   .to-top{ right: 16px; bottom: 18px; }
+}
+/* ========== Планшет: всё помещается в плашку ========== */
+@media (max-width: 1100px){
+  .site-header{ padding: 0 24px; }
+  .header-bar{ padding: 0 20px; }
+
+  .nav{ gap: 44px; min-width: 0; }
+
+  .nav-link, .nav-btn{
+    font-size: 22px;           /* уменьшаем текст */
+    letter-spacing: .05em;
+  }
+  .contacts__trigger .nav-link{ font-size: 22px; }
+
+  .logo img{ height: 42px; }
+}
+
+/* чуть уже — ещё ужимаем */
+@media (max-width: 920px){
+  .nav{ gap: 26px; }
+  .nav-link, .nav-btn{ font-size: 20px; }
+  .contacts__trigger .nav-link{ font-size: 20px; }
+  .logo img{ height: 38px; }
+}
+
+/* ========== Телефон: включаем бургер, прячем обычное меню ========== */
+@media (max-width: 760px){
+  .site-header{ padding: 0 12px; }
+  .header-bar{ height: 64px; padding: 0 14px; }
+
+  /* прячем обе навигации */
+  .nav.left, .nav.right{ display: none; }
+
+  /* логотип оставляем */
+  .logo img{ height: 34px; }
+
+  /* бургер показываем */
+  .burger{ display: inline-flex; }
+}
+
+/* ===== твой hero адаптив можно оставить и чуть расширить ===== */
+@media (max-width: 1100px){
+  .hero__content{ left: 24px; bottom: 64px; }
+  .hero__title{ font-size: 52px; }
+  .hero__subtitle{ font-size: 20px; }
+}
+
+@media (max-width: 760px){
+  .hero__content{ left: 16px; bottom: 56px; max-width: 92vw; }
+  .hero__title{ font-size: 42px; }
+  .hero__subtitle{ font-size: 16px; }
+  .hero__to-top{ right: 16px; bottom: 18px; }
 }
