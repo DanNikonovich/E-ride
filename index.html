@@ -1,36 +1,47 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" id="top">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>E-ride</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>E-RIDE</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-
-  <header class="site-header" id="siteHeader">
-    <div class="header-wrap">
-      <a class="logo" href="/" aria-label="E-RIDE">
-        <img src="components/logo.png" alt="E-RIDE">
-      </a>
-
-      <nav class="nav nav-left" aria-label="Основная навигация">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-bar">
+      <nav class="nav left" aria-label="Навигация слева">
         <a class="nav-link" href="#promo">Акции</a>
         <a class="nav-link" href="#rules">Правила</a>
       </nav>
 
-      <nav class="nav nav-right" aria-label="Доп. навигация">
-        <div class="dropdown" data-dropdown>
-          <button class="nav-link nav-btn" type="button" data-dropdown-btn aria-expanded="false">
-            Контакты
-            <img class="nav-arrow" src="components/svg/Cont_down.svg" alt="" aria-hidden="true">
-          </button>
+      <a class="logo" href="#top" aria-label="На главную">
+        <img src="components/logo.png" alt="E-RIDE">
+      </a>
 
-          <div class="dropdown-menu" data-dropdown-menu role="menu">
-            <a role="menuitem" href="#contacts">Контакты</a>
-            <a role="menuitem" href="#map">Как добраться</a>
-            <a role="menuitem" href="#support">Поддержка</a>
+      <nav class="nav right" aria-label="Навигация справа">
+        <div class="contacts" data-contacts>
+          <a class="contacts__trigger" href="#contacts" aria-label="Контакты">
+            <span class="nav-link">Контакты</span>
+            <span class="contacts__arrow" aria-hidden="true"></span>
+          </a>
+        
+          <div class="contacts__hint" role="tooltip" aria-hidden="true">
+            <div class="contacts__row contacts__season-row">
+              <span class="contacts__season">Апрель → Октябрь</span>
+              <span></span>
+            </div>
+            
+            <div class="contacts__row">
+              <span class="contacts__badge">Пн</span>
+              <span class="contacts__value">Выходной</span>
+            </div>
+          
+            <div class="contacts__row">
+              <span class="contacts__badge">Вт–Вс</span>
+              <span class="contacts__value">10:00 – 20:00</span>
+            </div>
           </div>
         </div>
 
@@ -39,5 +50,25 @@
     </div>
   </header>
 
+  <!-- HERO -->
+  <section class="hero" aria-label="Герой секция">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">
+        БЕЗ ДОРОГ.<br>БЕЗ ОГРАНИЧЕНИЙ.<br>ТОЛЬКО АДРЕНАЛИН.
+      </h1>
+      <p class="hero__subtitle">
+        Арендуй мощный электробайк и открой для себя дикие трассы, созданные для настоящих экстремалов.
+      </p>
+    </div>
+
+    <a class="hero__to-top" href="#top" aria-label="Наверх страницы">
+      <img src="components/svg/Upper.svg" alt="">
+    </a>
+  </section>
+
+  <!-- JS отдельным файлом -->
+  <script src="js/hero.js" defer></script>
 </body>
 </html>
