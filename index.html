@@ -115,12 +115,177 @@
     </div>
 
     <a class="hero__to-top" href="#top" aria-label="Наверх страницы">
-      <img src="components/svg/Upper.svg" alt="">
+      <img src="components/svg/Upper.svg" alt="" aria-hidden="true">
     </a>
   </section>
 
+  <!-- Bikes -->
+  <section class="bikes" id="bikes">
+    <div class="bikes__head">
+      <img class="bikes__head-ico" src="components/svg/biker.svg" alt="" aria-hidden="true">
+      <h2 class="bikes__head-title">Наш парк байков</h2>
+    </div>
+
+    <div class="bikes__grid">
+      <!-- LEFT: info cards -->
+      <div class="bikes__left">
+        <article class="info-card">
+          <h3 class="info-card__title">ХАРАКТЕРИСТИКИ</h3>
+
+          <div class="info-card__rows">
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/speed.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Максимальная скорость</div>
+                <div class="info-row__value">~60–70 км/ч</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/battery.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Размер аккумулятора</div>
+                <div class="info-row__value">60V/40AH</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/torque.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Крутящий момент</div>
+                <div class="info-row__value">250 n.m</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/power.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Мощность</div>
+                <div class="info-row__value">8000 W</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/weight.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Вес байка</div>
+                <div class="info-row__value">56 кг</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <h3 class="info-card__title">КОГДА АРЕНДА НЕВОЗМОЖНА</h3>
+
+          <div class="info-card__rows">
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/alcohol.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Алкогольное опьянение</div>
+                <div class="info-row__value">присутствует</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/heart.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Проблемы с сердцем</div>
+                <div class="info-row__value">имеются</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/age.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Возраст</div>
+                <div class="info-row__value">до 18 лет</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/height.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Рост райдера</div>
+                <div class="info-row__value">&lt; 160 см</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-row__icon">
+                <img src="components/svg/rider_weight.svg" alt="" aria-hidden="true">
+              </span>
+              <div class="info-row__text">
+                <div class="info-row__desc">Вес райдера</div>
+                <div class="info-row__value">до 100 кг</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT: slider -->
+      <div class="bikes__right">
+        <div class="slider" data-slider>
+          <div class="slider__stage">
+            <div class="slider__track" data-track>
+              <div class="slide">
+                <img src="components/bikes/1.png" alt="Bike 1">
+                <div class="price-tag" data-tag style="--tag-color:#908F4A;">80 BYN</div>
+              </div>
+              <div class="slide">
+                <img src="components/bikes/2.png" alt="Bike 2">
+                <div class="price-tag" data-tag style="--tag-color:#000000;">80 BYN</div>
+              </div>
+              <div class="slide">
+                <img src="components/bikes/3.png" alt="Bike 3">
+                <div class="price-tag" data-tag style="--tag-color:#003A96;">80 BYN</div>
+              </div>
+              <div class="slide">
+                <img src="components/bikes/4.png" alt="Bike 4">
+                <div class="price-tag" data-tag style="--tag-color:#895FCD;">80 BYN</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__controls">
+            <button class="ctrl ctrl--prev" type="button" data-prev>
+              <span class="ctrl__arrow">‹</span>
+              <span class="ctrl__label">REVERSE</span>
+            </button>
+
+            <button class="ctrl ctrl--next" type="button" data-next>
+              <span class="ctrl__label">DRIVE</span>
+              <span class="ctrl__arrow">›</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- JS отдельным файлом -->
-   <script src="js/menu.js" defer></script>
+  <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
+  <script src="js/scroll-top.js" defer></script>
+  <script src="js/bikes-slider.js" defer></script>
 </body>
 </html>
