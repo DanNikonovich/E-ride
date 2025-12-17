@@ -1082,9 +1082,27 @@ body.menu-open .mnav{
 /* ===== TRAINING ===== */
 .training-layout{
   display:grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-columns: 1fr 1.8fr 1fr;
   gap: 26px;
-  align-items:center;
+  align-items:stretch;     /* важно: колонки растягиваются по высоте */
+  min-height: 520px;        /* подгони под макет */
+}
+
+/* левая колонка — вниз */
+.training-layout > .training-cards:first-of-type{
+  align-self: end;
+}
+
+/* правая колонка — вверх */
+.training-layout > .training-cards:last-of-type{
+  align-self: start;
+}
+
+/* центр */
+.training-track{
+  display: grid;
+  place-items: center;
+  align-self: center;
 }
 
 .training-track img{
