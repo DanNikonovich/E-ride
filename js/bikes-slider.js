@@ -33,6 +33,10 @@
     next.disabled = atEnd;
   };
 
+  priceTag.style.transform = 'rotate(10deg) scale(1.05)';
+  setTimeout(() => {
+    priceTag.style.transform = 'rotate(10deg) scale(1)';
+  }, 150);
 
   const shake = () => {
     root.classList.add('shake');
