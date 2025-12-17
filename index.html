@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <!-- HEADER -->
+  <!--------------------------------------------- HEADER --------------------------------------------->
   <header class="site-header">
     <div class="header-bar">
       <nav class="nav left" aria-label="Навигация слева">
@@ -59,7 +59,7 @@
     </div>
   </header>
 
-  <!-- Menu -->
+  <!--------------------------------------------- Menu --------------------------------------------->
   <div class="mnav" id="mobileMenu" aria-hidden="true">
     <div class="mnav__panel" role="dialog" aria-modal="true" aria-label="Меню">
       <button class="mnav__close" type="button" aria-label="Закрыть меню">×</button>
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <!-- HERO -->
+  <!--------------------------------------------- HERO --------------------------------------------->
   <section class="hero" aria-label="Герой секция">
     <div class="hero__bg" aria-hidden="true"></div>
 
@@ -119,7 +119,7 @@
     </a>
   </section>
 
-  <!-- Bikes -->
+  <!--------------------------------------------- Bikes --------------------------------------------->
   <section class="bikes" id="bikes">
     <div class="bikes__head">
       <img class="bikes__head-ico" src="components/svg/biker.svg" alt="" aria-hidden="true">
@@ -280,10 +280,188 @@
     </div>
   </section>
 
+  <!--------------------------------------------- Legendary Tracks --------------------------------------------->
+  <section class="tracks" id="tracks" aria-label="Легендарные трассы">
+    <!-- Заголовок как раньше -->
+    <div class="tracks__head">
+      <img class="tracks__head-ico" src="components/svg/biker.svg" alt="" aria-hidden="true">
+      <h2 class="tracks__head-title">Легендарные трассы</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tracks__tabs" role="tablist" aria-label="Выбор типа трасс">
+      <button class="tracks__tab is-active" type="button" role="tab"
+              aria-selected="true" data-tab="routes">
+        Маршруты
+        <span class="tracks__underline" aria-hidden="true"></span>
+      </button>
+
+      <button class="tracks__tab" type="button" role="tab"
+              aria-selected="false" data-tab="training">
+        Тренировочная трасса
+        <span class="tracks__underline" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- ===== PANEL: ROUTES ===== -->
+    <div class="tracks__panel is-active" data-panel="routes">
+      <div class="routes-grid" data-routes-grid>
+        <!-- EASY -->
+        <article class="route-card" data-route="easy">
+          <h3 class="route-card__lvl">Лёгкий</h3>
+
+          <div class="route-card__media">
+            <img src="components/map/EASY.jpg" alt="Маршрут: лёгкий">
+            <div class="route-card__fade" aria-hidden="true"></div>
+            <div class="route-card__hint">Нажмите для подробностей</div>
+
+            <!-- видео (скрыто пока не раскрыто) -->
+            <video class="route-card__video" preload="metadata" muted playsinline>
+              <source src="components/map/EASY.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+
+        <!-- HARD -->
+        <article class="route-card" data-route="hard">
+          <h3 class="route-card__lvl">Сложный</h3>
+
+          <div class="route-card__media">
+            <img src="components/map/HARD.jpg" alt="Маршрут: сложный">
+            <div class="route-card__fade" aria-hidden="true"></div>
+            <div class="route-card__hint">Нажмите для подробностей</div>
+
+            <video class="route-card__video" preload="metadata" muted playsinline>
+              <source src="components/map/HARD.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+
+        <!-- MEDIUM -->
+        <article class="route-card" data-route="medium">
+          <h3 class="route-card__lvl">Средний</h3>
+
+          <div class="route-card__media">
+            <img src="components/map/MEDIUM.jpg" alt="Маршрут: средний">
+            <div class="route-card__fade" aria-hidden="true"></div>
+            <div class="route-card__hint">Нажмите для подробностей</div>
+
+            <video class="route-card__video" preload="metadata" muted playsinline>
+              <source src="components/map/MEDIUM.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+      </div>
+
+      <!-- общая плашка снизу -->
+      <div class="tracks-info">
+        <div class="tracks-info__top">
+          <span class="dot dot--easy" aria-hidden="true"></span>
+          <span class="dot dot--hard" aria-hidden="true"></span>
+          <span class="dot dot--med" aria-hidden="true"></span>
+          <div class="tracks-info__title">Характеристики всех трасс</div>
+        </div>
+
+        <div class="tracks-info__line" aria-hidden="true"></div>
+
+        <div class="tracks-info__grid">
+          <div class="ti-row">
+            <span class="ti-ico"><img src="components/svg/length.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="ti-desc">Размеры маршрутов</div>
+              <div class="ti-val">От 15 до 25 км</div>
+            </div>
+          </div>
+
+          <div class="ti-row">
+            <span class="ti-ico"><img src="components/svg/clock.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="ti-desc">Время заезда</div>
+              <div class="ti-val">Ориентировочно 2 часа</div>
+            </div>
+          </div>
+
+          <div class="ti-row">
+            <span class="ti-ico"><img src="components/svg/car.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="ti-desc">Байков в заезде</div>
+              <div class="ti-val">4 райдера и инструктор</div>
+            </div>
+          </div>
+
+          <div class="ti-row">
+            <span class="ti-ico"><img src="components/svg/speed.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="ti-desc">Оптимальная скорость</div>
+              <div class="ti-val">~ 45–55 км/ч</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL: TRAINING ===== -->
+    <div class="tracks__panel" data-panel="training">
+      <div class="training-layout">
+        <!-- left cards -->
+        <div class="training-cards">
+          <div class="tcard">
+            <span class="tcard__ico"><img src="components/svg/clock.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="tcard__desc">Длительность заезда</div>
+              <div class="tcard__val">10 минуты</div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <span class="tcard__ico"><img src="components/svg/car.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="tcard__desc">Машин в заезде</div>
+              <div class="tcard__val">8 картов</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- center image -->
+        <div class="training-track">
+          <img src="css/img/track.png" alt="Тренировочная трасса">
+        </div>
+
+        <!-- right cards -->
+        <div class="training-cards">
+          <div class="tcard">
+            <span class="tcard__ico"><img src="components/svg/length.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="tcard__desc">Длина трассы</div>
+              <div class="tcard__val">550 метров</div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <span class="tcard__ico"><img src="components/svg/speed.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="tcard__desc">Прохождения круга</div>
+              <div class="tcard__val">~ 1,15 минуты</div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <span class="tcard__ico"><img src="components/svg/turn.svg" alt="" aria-hidden="true"></span>
+            <div>
+              <div class="tcard__desc">Поворотов на трассе</div>
+              <div class="tcard__val">16</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- JS отдельным файлом -->
   <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/scroll-top.js" defer></script>
   <script src="js/bikes-slider.js" defer></script>
+  <script src="js/tracks.js" defer></script>
 </body>
 </html>
