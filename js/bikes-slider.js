@@ -6,6 +6,7 @@
   const prev = root.querySelector('[data-prev]');
   const next = root.querySelector('[data-next]');
   const slides = Array.from(track.children);
+  const priceTag = root.querySelector('#priceTag');
 
   let index = 0;
   let isAnimating = false;
@@ -13,20 +14,25 @@
   const update = () => {
     const x = -index * 100;
     track.style.transform = `translateX(${x}%)`;
-
-    // кнопки: серые на краях, зелёные если можно листать
+    
+    /* === ВОТ ЭТО НОВОЕ === */
+    const color = slides[index].dataset.color;
+    priceTag.style.setProperty('--tag-color', color);
+    /* ==================== */
+    
     const atStart = index === 0;
     const atEnd = index === slides.length - 1;
-
+    
     prev.classList.toggle('is-disabled', atStart);
     prev.classList.toggle('is-active', !atStart);
-
+    
     next.classList.toggle('is-disabled', atEnd);
     next.classList.toggle('is-active', !atEnd);
-
+    
     prev.disabled = atStart;
     next.disabled = atEnd;
   };
+
 
   const shake = () => {
     root.classList.add('shake');

@@ -678,19 +678,22 @@ body.menu-open .mnav{
 /* Плашка цены */
 .price-tag{
   position:absolute;
-  top: 26px;
-  right: 26px;
+  top: 15px;
+  right: 15px;
   background: #FFFFFF;
   border-radius: 45px;
   transform: rotate(10deg);
-  padding: 25px 50px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  padding: 20px 40px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-size: 27px;
   color: var(--tag-color);
+
+  transition: color .25s ease; /* плавная смена цвета */
 }
+
 
 /* Кнопки */
 .slider__controls{
