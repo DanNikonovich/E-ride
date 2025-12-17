@@ -20,6 +20,12 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face{
+  font-family: "FingerPaint-Regular";
+  src: url("components/fonts/FingerPaint/FingerPaint-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 /* =======================Base======================= */
 :root{
   --page-bg: #000000;
@@ -1152,15 +1158,161 @@ body.menu-open .mnav{
   color:#fff;
 }
 
-/* adaptive */
-@media (max-width: 1200px){
-  .tracks{ padding: 0 24px; }
-  .routes-grid{ grid-template-columns: 1fr; }
-  .route-card{ min-height: 520px; }
-  .tracks-info__grid{ grid-template-columns: 1fr; }
-  .training-layout{ grid-template-columns: 1fr; }
+/* ==============================================Why we============================================== */
+.why{
+  background:#000;
 }
 
+.why__top{
+  padding: 0 94px;
+  margin-top: 100px;
+  max-width: 1400px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.section-title__icon{
+  width: 40px;
+  height: 40px;
+  display:block;
+}
+.section-title__text{
+  font-family: "Jura", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  color:#fff;
+  margin: 0;
+}
+
+.why__lead{
+  font-family: "Inter", sans-serif;
+  font-weight: 400;          /* Inter Regular */
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: .02em;     /* 2% */
+  color: #fff;
+  margin: 0;
+  max-width: 1250px;
+}
+.why__brand{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;          /* Inter SemiBold */
+  font-size: 20px;
+  letter-spacing: .02em;
+  color:#fff;
+}
+
+/* ===== SCROLL IMAGE PIN ===== */
+.why-scroll{
+  margin-top: 26px;
+  position: relative;
+}
+
+/* sticky слой */
+.why-scroll__sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.why-scroll__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* оверлей текста поверх */
+.why-scroll__overlay{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  pointer-events:none;
+}
+
+/* контейнер слов, который будет “ехать” вверх */
+/* контейнер оверлея */
+.why-scroll__words{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* один “слайд” (по центру по вертикали) */
+.why-slide{
+  position:absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-120%, -50%); /* старт: далеко слева */
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity .18s ease;
+  width: 100%;
+  text-align: center;
+  pointer-events:none;
+}
+
+/* крупный */
+.why-big{
+  font-family: "Finger Paint", cursive;
+  font-weight: 400;
+  font-size: clamp(120px, 18vw, 290px);
+  color: #01FF01;
+  line-height: .9;
+  text-shadow: 0 18px 60px rgba(0,0,0,.55);
+}
+
+/* подпись */
+.why-sub{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color:#fff;
+  letter-spacing: .02em;
+  opacity: .92;
+  margin-top: 10px;
+}
+
+/* последний — “фиксируем” по центру, когда нужно */
+.why-slide.is-locked{
+  transform: translate(-50%, -50%) !important;
+  opacity: 1 !important;
+}
+
+/* огромный зелёный текст */
+.why-scroll__big{
+  font-family: "FingerPaint-Regular", cursive;
+  font-weight: 400;
+  font-size: clamp(120px, 18vw, 290px);
+  color: #01FF01;
+  line-height: .9;
+  text-align:center;
+  text-shadow: 0 18px 60px rgba(0,0,0,.55);
+}
+
+/* подписи */
+.why-scroll__sub{
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* SemiBold */
+  font-size: 30px;
+  color:#fff;
+  letter-spacing: .02em;
+  text-align:center;
+  opacity: .92;
+  margin-top: -10px;
+}
+
+/* “внутренний” скролл-дистанция пина */
+.why-scroll__spacer{
+  height: 260vh; /* сколько прокручиваем внутри pinned; можно 220–320 */
+}
 
 /* ==============================================Adaptive============================================== */
 @media (max-width: 1200px){
@@ -1171,6 +1323,11 @@ body.menu-open .mnav{
   .bikes__grid{ grid-template-columns: 1fr; }
   .info-card__title, .bikes__head-title{ font-size: 34px; }
   .slide img{ max-height: 420px; }
+  .tracks{ padding: 0 24px; }
+  .routes-grid{ grid-template-columns: 1fr; }
+  .route-card{ min-height: 520px; }
+  .tracks-info__grid{ grid-template-columns: 1fr; }
+  .training-layout{ grid-template-columns: 1fr; }
 }
 
 /* ========== Планшет: всё помещается в плашку ========== */

@@ -449,11 +449,68 @@
     </div>
   </section>
 
+  <!--------------------------------------------- Why we --------------------------------------------->
+  <section class="why" id="why">
+  <!-- верх: заголовок + текст -->
+  <div class="why__top">
+    <div class="section-title">
+      <img class="section-title__icon" src="components/svg/biker.svg" alt="" aria-hidden="true">
+      <h2 class="section-title__text">Почему мы</h2>
+    </div>
+
+    <p class="why__lead">
+      <span class="why__brand">E-RIDE</span>
+      — это адреналин, умноженный на мощь электричества!<br>
+      Наши современные электробайки, профессиональная экипировка и продуманные внедорожные трассы созданы для того, чтобы дарить вам уверенность
+      на каждом повороте и полную свободу на бездорожье. Мы тщательно поддерживаем технику и маршруты в идеальном состоянии, чтобы ваши впечатления
+      от скорости были по-настоящему яркими и безопасными. Неважно, впервые вы за рулем электровнедорожника или опытный райдер — у нас вы найдете
+      идеальную технику для уверенного старта, захватывающих приключений с друзьями или настоящих экстремальных миссий.
+    </p>
+  </div>
+
+  <!-- блок, который “пинится” и скроллит текст поверх картинки -->
+  <div class="why-scroll" data-why>
+    <div class="why-scroll__sticky">
+      <img class="why-scroll__img" src="css/img/ScrollImage.png" alt="E-RIDE">
+
+      <div class="why-scroll__overlay" aria-hidden="true">
+        <div class="why-scroll__words" data-words>
+          <div class="why-scroll__words" data-words>
+            <div class="why-slide is-big" data-slide>
+              <div class="why-big">5</div>
+              <div class="why-sub">внедорожных электромотоциклов</div>
+            </div>
+          
+            <div class="why-slide is-big" data-slide>
+              <div class="why-big">GoPro</div>
+              <div class="why-sub">запечатлит весь экшен</div>
+            </div>
+          
+            <div class="why-slide is-big" data-slide>
+              <div class="why-big">3</div>
+              <div class="why-sub">вида адреналина на выбор</div>
+            </div>
+          
+            <div class="why-slide is-big is-last" data-slide>
+              <div class="why-big">100%</div>
+              <div class="why-sub">подготовка к каждому<br>заезду</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- спейсер: высота скролла внутри “пина” -->
+    <div class="why-scroll__spacer" data-spacer></div>
+  </div>
+</section>
+
   <!-- JS отдельным файлом -->
   <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/scroll-top.js" defer></script>
   <script src="js/bikes-slider.js" defer></script>
   <script src="js/tracks.js" defer></script>
+  <script src="js/why-scroll.js" defer></script>
 </body>
 </html>
