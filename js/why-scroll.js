@@ -7,71 +7,82 @@
   const lastIndex = slides.length - 1;
 
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-
-  const getRange = () => spacer.getBoundingClientRect().height - window.innerHeight;
-
   const lerp = (a, b, t) => a + (b - a) * t;
 
-  // управление траекторией
-  const X_START = -120; // % (слева)
-  const X_END   = 120;  // % (вправо)
+  // Позиции в процентах для translateX(...)
+  // Центр = -50% (если элемент позиционируется left:50%)
+  const X_CENTER = -50;
+  const X_RIGHT  = 120;   // за правым краем
+  const X_LEFT   = -220;  // далеко влево (чтобы точно ушёл)
+
+  const getRange = () => spacer.getBoundingClientRect().height - window.innerHeight;
 
   const render = () => {
     const rect = root.getBoundingClientRect();
     const range = getRange();
     const scrolled = clamp(-rect.top, 0, range);
-    const t = range > 0 ? scrolled / range : 0; // 0..1
+    const t = range > 0 ? clamp(scrolled / range, 0, 1) : 0; // 0..1
 
-    // делим скролл на “сцены” по количеству слайдов
-    // каждый слайд занимает один сегмент, последний — с остановкой в центре
     const seg = 1 / slides.length;
 
     slides.forEach((el, i) => {
-      el.classList.remove('is-locked');
       const start = i * seg;
       const end = (i + 1) * seg;
-
-      // локальный прогресс внутри сегмента (0..1)
       const local = clamp((t - start) / seg, 0, 1);
 
-      // по умолчанию: вне сегмента — скрыто
-      if (t < start || t > end) {
-        el.style.opacity = 0;
-        // уводим влево чтобы не мигало
-        el.style.transform = `translate(${X_START}%, -50%)`;
+      // По умолчанию прячем
+      el.style.opacity = 0;
+
+      // Вне сегмента — уводим в безопасную позицию
+      if (t < start) {
+        // ещё не время: ждёт справа
+        el.style.transform = `translate(${X_RIGHT}%, -50%)`;
+        return;
+      }
+      if (t > end) {
+        // уже прошло: ушёл влево
+        el.style.transform = `translate(${X_LEFT}%, -50%)`;
         return;
       }
 
-      // последний: едет, потом “замок” в центре
-      if (i === lastIndex) {
-        // первые ~60% сегмента — едет к центру, дальше стоит
-        const lockAt = 0.6;
-        if (local >= lockAt) {
-          el.classList.add('is-locked');
-          return;
-        }
+      // Теперь мы внутри сегмента -> показываем и двигаем
+      el.style.opacity = 1;
 
-        const moveT = local / lockAt; // 0..1 до момента фиксации
-        const x = lerp(X_START, -50, moveT); // -50% = центр
-        el.style.opacity = 1;
+      // Первый: стартует сразу в центре
+      if (i === 0) {
+        // 0..1: центр -> уезжает влево
+        const x = lerp(X_CENTER, X_LEFT, local);
         el.style.transform = `translate(${x}%, -50%)`;
         return;
       }
 
-      // обычные: едет горизонтально слева -> вправо
-      const x = lerp(X_START, X_END, local);
+      // Последний: приезжает к центру и в конце остаётся в центре
+      if (i === lastIndex) {
+        // 0..1: справа -> центр
+        const x = lerp(X_RIGHT, X_CENTER, local);
+        el.style.transform = `translate(${x}%, -50%)`;
+        return;
+      }
 
-      // плавное появление/исчезновение (чтобы следующий появлялся, когда предыдущий ушёл)
-      // можно чуть “сжать” окна видимости
+      // Обычные: справа -> центр -> влево (двухфазно)
+      // 0..0.5: right -> center
+      // 0.5..1: center -> left
+      if (local <= 0.5) {
+        const x = lerp(X_RIGHT, X_CENTER, local / 0.5);
+        el.style.transform = `translate(${x}%, -50%)`;
+      } else {
+        const x = lerp(X_CENTER, X_LEFT, (local - 0.5) / 0.5);
+        el.style.transform = `translate(${x}%, -50%)`;
+      }
+
+      // мягкие fade-in/out, чтобы следующий появлялся когда прошлый ушёл
       const fadeInEnd = 0.15;
       const fadeOutStart = 0.85;
 
       let op = 1;
       if (local < fadeInEnd) op = local / fadeInEnd;
       if (local > fadeOutStart) op = (1 - local) / (1 - fadeOutStart);
-
       el.style.opacity = clamp(op, 0, 1);
-      el.style.transform = `translate(${x}%, -50%)`;
     });
 
     requestAnimationFrame(render);

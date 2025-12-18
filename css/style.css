@@ -1248,9 +1248,9 @@ body.menu-open .mnav{
 /* один “слайд” (по центру по вертикали) */
 .why-slide{
   position:absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
-  transform: translate(-120%, -50%); /* старт: далеко слева */
+  transform: translate(-50%, -50%); 
   opacity: 0;
   will-change: transform, opacity;
   transition: opacity .18s ease;
@@ -1273,7 +1273,7 @@ body.menu-open .mnav{
 .why-sub{
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
   color:#fff;
   letter-spacing: .02em;
   opacity: .92;
@@ -1311,8 +1311,9 @@ body.menu-open .mnav{
 
 /* “внутренний” скролл-дистанция пина */
 .why-scroll__spacer{
-  height: 260vh; /* сколько прокручиваем внутри pinned; можно 220–320 */
+  height: 2000vh; 
 }
+
 
 /* ==============================================Adaptive============================================== */
 @media (max-width: 1200px){
