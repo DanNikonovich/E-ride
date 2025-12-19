@@ -184,7 +184,7 @@ a{ color:inherit; }
   padding: 16px 18px;
   border-radius: 20px;
 
-  background: rgba(0,0,0,.65);
+  background: rgba(0,0,0,.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 20px 50px rgba(0,0,0,.55);
@@ -1775,6 +1775,197 @@ body.menu-open .mnav{
   font-size:12px;
   color:#fff;
 }
+
+/* ==============================================ECO============================================== */
+/* контейнер — как у хедера (если у тебя уже есть общий, используй его) */
+.eco__container{
+  width: min(1732px, calc(100% - 188px)); /* под 94px слева/справа */
+  margin: 0 auto;
+}
+
+/* ===== cards grid ===== */
+.eco__grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 40px;
+  margin-top: 26px;
+}
+
+/* карточка */
+.eco-card{
+  border-radius: 25px;
+  background: rgba(43,43,43,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  padding: 34px 40px;
+  display:flex;
+  align-items:flex-start;
+  gap: 40px;                 /* как ты просил */
+  flex-direction: column;
+}
+
+/* иконка */
+.eco-card__icon{
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,.18);
+  flex: 0 0 auto;
+}
+.eco-card__icon img{
+  width: 42px;
+  height: 42px;
+  display:block;
+}
+
+/* тексты */
+.eco-card__title{
+  margin: 0 0 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.eco-card__text{
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #B1B1B1;
+  line-height: 1.35;
+}
+
+/* ===== last wide card ===== */
+.eco-wide{
+  margin-top: 34px;
+  border-radius: 25px;
+  background: rgba(43,43,43,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  padding: 34px 40px;
+
+  display:flex;              /* последняя тоже в линию */
+  align-items:flex-start;
+  gap: 40px;
+}
+
+.eco-card__icon,
+.eco-wide__icon{
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+
+  /* объём */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 -6px 12px rgba(0,0,0,.35),
+    0 18px 36px rgba(0,0,0,.45);
+}
+.eco-card__icon--green,
+.eco-wide__icon{
+  background:
+    linear-gradient(
+      145deg,
+      #19ff6a 0%,
+      #0fdc55 38%,
+      #06b846 65%,
+      #048c35 100%
+    );
+}
+.eco-card__icon--green1{
+  background:
+    linear-gradient(
+      145deg,
+      #43ff19 0%,
+      #38dc0f 38%,
+      #1eb806 65%,
+      #1d8c04 100%
+    );
+}
+.eco-card__icon--blue{
+  background:
+    linear-gradient(
+      145deg,
+      #1ec9ff 0%,
+      #12b2f2 40%,
+      #0a8fd1 70%,
+      #056aa8 100%
+    );
+}
+.eco-card__icon--blue2{
+  background:
+    linear-gradient(
+      145deg,
+      #1ef4ff 0%,
+      #12f2f2 40%,
+      #0ad1c7 70%,
+      #05a8a5 100%
+    );
+}
+.eco-card__icon img,
+.eco-wide__icon img{
+  width: 42px;
+  height: 42px;
+  display: block;
+
+  filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+.eco-wide__title{
+  margin: 0 0 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.eco-wide__text{
+  margin: 0 0 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #B1B1B1;
+  line-height: 1.35;
+}
+
+/* последняя строка зелёная */
+.eco-wide__accent{
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #01FF01;
+}
+
+.eco-card:hover .eco-card__icon,
+.eco-wide:hover .eco-wide__icon{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.25),
+    inset 0 -8px 14px rgba(0,0,0,.45),
+    0 22px 48px rgba(0,0,0,.6);
+  transform: translateY(-1px);
+}
+
+/* адаптив */
+@media (max-width: 1100px){
+  .eco__grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 760px){
+  .eco__container{ width: calc(100% - 32px); }
+  .eco-card, .eco-wide{ padding: 22px; gap: 20px; }
+  .eco-card__title, .eco-wide__title{ font-size: 24px; }
+  .eco-card__text, .eco-wide__text, .eco-wide__accent{ font-size: 18px; }
+}
+
 
 /* ==============================================Adaptive============================================== */
 @media (max-width: 1200px){
