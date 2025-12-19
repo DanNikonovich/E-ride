@@ -1,28 +1,28 @@
 /* =======================Fonts======================= */
 @font-face{
   font-family: "Jura";
-  src: url("components/fonts/Jura/Jura.ttf") format("truetype");
+  src: url("./components/fonts/Jura/Jura.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face{
   font-family: "Ethnocentric rus-lat";
-  src: url("components/fonts/Ethnocentric rus-lat/Ethnocentric rus-lat extra-expanded Regular.ttf") format("truetype");
+  src: url("./components/fonts/Ethnocentric rus-lat/Ethnocentric rus-lat extra-expanded Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face{
   font-family: "Inter";
-  src: url("components/fonts/Inter/Inter-Medium.ttf") format("truetype");
+  src: url("./components/fonts/Inter/Inter-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face{
   font-family: "FingerPaint-Regular";
-  src: url("components/fonts/FingerPaint/FingerPaint-Regular.ttf") format("truetype");
+  src: url("./components/fonts/FingerPaint/FingerPaint-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -55,7 +55,7 @@ a{ color:inherit; }
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 0 94px;
+  padding: 0 52px;
   pointer-events: none;   /* важно */
 }
 
@@ -71,14 +71,14 @@ a{ color:inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 34px;
+  padding: 0 64px;
   pointer-events: auto;   /* клики работают */
 }
 
 .nav{
   display:flex;
   align-items:center;
-  gap: 110px;
+  gap: 220px;
   min-width: 380px;
 }
 .nav.right{ justify-content: flex-end; }
@@ -444,7 +444,7 @@ body.menu-open .mnav{
       rgba(0,0,0,.22) 55%,
       rgba(0,0,0,0) 100%
     ),
-    url("img/main.png") bottom center / cover no-repeat;
+    url("./img/main.png") bottom center / cover no-repeat;
 
   /* старт: ч/б + слегка приглушённый */
   filter: grayscale(1) brightness(.75);
@@ -828,7 +828,7 @@ body.menu-open .mnav{
   background:#01FF01;
 
   /* делаем “кисточку” */
-  -webkit-mask-image: url("ui/brush-mask.png");
+  -webkit-mask-image: url("./ui/brush-mask.png");
   -webkit-mask-repeat: repeat-x;
   -webkit-mask-size: auto 100%;
 
@@ -1564,6 +1564,216 @@ body.menu-open .mnav{
 /* небольшой фон для “ленты”, если хочешь */
 .marquee-row{
   padding: 4px 0;
+}
+
+/* ==============================================Visitors============================================== */
+.guests{
+  padding: 100px 100px;
+}
+
+/* Заголовок — как в прошлых секциях (подстрой под твой section-title) */
+.section-title{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin-bottom: 46px;
+}
+.section-title h2{
+  font-family: "Jura", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  color:#fff;
+}
+
+/* guests__main по ширине как header */
+.guests__main{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 1fr 2fr; /* 1/3 и 2/3 */
+  gap: 40px;
+  align-items:start;
+}
+
+/* ===== левая колонка ===== */
+.guests__name{
+  font-family:"Inter", sans-serif;
+  font-weight:600; /* SemiBold */
+  font-size:35px;
+  color:#fff;
+  margin: 10 0 20px;
+}
+
+.guests__desc{
+  font-family:"Inter", sans-serif;
+  font-weight:400; /* Regular */
+  font-size:16px;
+  color:#fff;
+  line-height:1.45;
+  margin: 0 0 34px;
+}
+
+/* цитата */
+.guests__quote{
+  border-radius: 25px;
+  background: rgba(43,43,43,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  padding: 22px 22px 24px;
+  margin-bottom: 34px;
+}
+
+.guests__quote-ico{
+  width: 44px;            /* побольше */
+  height: 44px;
+  display:block;
+  margin-bottom: 28px;
+}
+
+.guests__quote-text{
+  font-family:"Inter", sans-serif;
+  font-weight:300;
+  font-style: italic;     /* Light Italic */
+  font-size:14px;
+  color:#fff;
+  line-height:1.55;
+  margin: 0;
+}
+
+.guests__quote-author{
+  margin-top: 28px;       /* больше отступ от цитаты */
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-size:20px;
+  color:#01FF01;
+}
+
+/* мини-плашки */
+.guests__stats{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gstat{
+  border-radius: 18px;
+  background: rgba(43,43,43,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  padding: 18px 14px;
+  text-align:center;
+}
+
+.gstat__num{
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-size:28px;
+  color:#01FF01;
+  margin-bottom: 8px;
+}
+
+.gstat__label{
+  font-family:"Inter", sans-serif;
+  font-weight:300; /* Light */
+  font-size:12px;
+  color:#ffffff;
+  line-height:1.2;
+}
+
+/* ===== правая часть: мозаика 5x4 ===== */
+.guests__mosaic{
+  --gap: 20px;
+  --cols: 5;
+  --rows: 4;
+
+  display:grid;
+  grid-template-columns: 1.6fr 1.3fr 1fr 0.8fr 0.6fr;
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: var(--gap);
+  min-height: 680px;
+
+  border-radius: 28px;
+  overflow:hidden; /* чтобы общий контур был аккуратнее */
+}
+
+/* каждая плитка = одно и то же изображение, но с разным background-position */
+.guests__mosaic .tile{
+  border-radius: 25px;
+  background-image: url("./img/Nagul.png");
+  background-repeat: no-repeat;
+
+  /* ВАЖНО: размер “общей картинки” равен сетке */
+  background-size: calc(var(--cols) * 100%) calc(var(--rows) * 100%);
+
+  /* смещение по колонке/ряду */
+  background-position:
+    calc((var(--c) * 100%) / (var(--cols) - 1))
+    calc((var(--r) * 100%) / (var(--rows) - 1));
+
+  min-height: 110px; /* подгони: влияет на общую высоту мозаики */
+  box-shadow: 0 18px 36px rgba(0,0,0,.35);
+}
+
+/* ===== нижняя плашка ===== */
+.guests__footer{
+  margin-top: 46px;
+  margin-right: 150px;
+  margin-left: 150px;
+  border-radius: 25px;
+  background: rgba(43,43,43,.65);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  padding: 18px 28px 26px; /* меньше верхний внутренний отступ */
+}
+
+.guests__footer-title{
+  font-family:"Inter", sans-serif;
+  font-weight:600;  /* SemiBold */
+  font-size:20px;
+  color:#fff;
+  text-align:center;
+  margin: 0 0 22px;
+}
+
+/* растянуть три блока сильнее по ширине */
+.guests__footer-list{
+  display:flex;
+  justify-content: space-evenly;
+  gap: 100px; /* увеличенный боковой интервал */
+  padding: 0 20px;  /* ещё шире внутри */
+}
+
+.mini{
+  text-align:center;
+  min-width: 190px;
+}
+
+.mini__icon{
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #01FF01;
+  display:grid;
+  place-items:center;
+  margin: 0 auto 12px;
+}
+
+.mini__icon img{
+  width: 34px;
+  height: 34px;
+  display:block;
+}
+
+.mini__name{
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-size:18px;
+  color:#fff;
+  margin: 0;
+}
+
+.mini__role{
+  margin-top: 4px; /* уменьшить отступ от имён */
+  font-family:"Inter", sans-serif;
+  font-weight:300;
+  font-size:12px;
+  color:#fff;
 }
 
 /* ==============================================Adaptive============================================== */
