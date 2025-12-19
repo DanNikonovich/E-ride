@@ -788,6 +788,359 @@
     </div>
   </section>
 
+  <!--------------------------------------------- Comments --------------------------------------------->
+  <section class="reviews" id="reviews">
+    <div class="reviews__inner">
+      <div class="section-title">
+        <img class="section-title__ico" src="./components/svg/biker.svg" alt="" aria-hidden="true">
+        <h2 class="section-title__text">Отзывы наших гостей</h2>
+      </div>
+
+      <div class="reviews__grid">
+        <!-- LEFT: comments -->
+        <div class="reviews__feed" aria-label="Отзывы" data-feed>
+          <div class="reviews__list" data-list>
+            <!-- card -->
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-card__user">
+                  <span class="review-card__avatar">
+                    <img src="./components/svg/user.svg" alt="" aria-hidden="true">
+                  </span>
+                  <div class="review-card__meta">
+                    <div class="review-card__name">Александр М.</div>
+                    <div class="review-card__date">15 октября 2024</div>
+                  </div>
+                </div>
+
+                <div class="review-card__stars" aria-label="Оценка 5 из 5">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                </div>
+              </div>
+
+              <p class="review-card__text">
+                Потрясающее место! Устроили встречу друзей, все остались в восторге.
+                Профессиональные инструкторы, отличные карты. Обязательно вернемся!
+              </p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-card__user">
+                  <span class="review-card__avatar">
+                    <img src="./components/svg/user.svg" alt="" aria-hidden="true">
+                  </span>
+                  <div class="review-card__meta">
+                    <div class="review-card__name">Елена С.</div>
+                    <div class="review-card__date">8 октября 2024</div>
+                  </div>
+                </div>
+
+                <div class="review-card__stars" aria-label="Оценка 5 из 5">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                </div>
+              </div>
+
+              <p class="review-card__text">
+                Праздновали день рождения сына. Дети были в восторге! Безопасно, интересно,
+                персонал очень внимательный. Спасибо за праздник!
+              </p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-card__user">
+                  <span class="review-card__avatar">
+                    <img src="./components/svg/user.svg" alt="" aria-hidden="true">
+                  </span>
+                  <div class="review-card__meta">
+                    <div class="review-card__name">Игорь В.</div>
+                    <div class="review-card__date">5 октября 2024</div>
+                  </div>
+                </div>
+
+                <div class="review-card__stars" aria-label="Оценка 5 из 5">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                </div>
+              </div>
+
+              <p class="review-card__text">
+                Хожу регулярно, участвую в турнирах. Трасса отличная, техника в идеальном состоянии.
+                Лучшие электромотоциклы в городе!
+              </p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-card__user">
+                  <span class="review-card__avatar">
+                    <img src="./components/svg/user.svg" alt="" aria-hidden="true">
+                  </span>
+                  <div class="review-card__meta">
+                    <div class="review-card__name">Мария К.</div>
+                    <div class="review-card__date">25 сентября 2024</div>
+                  </div>
+                </div>
+
+                <div class="review-card__stars" aria-label="Оценка 4 из 5">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                  <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+                </div>
+              </div>
+
+              <p class="review-card__text">
+                Очень понравилось! Первый раз на таком каталась, немного волновалась, но инструктор
+                все подробно объяснил. Эмоции незабываемые!
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- RIGHT: form -->
+        <aside class="reviews__form" aria-label="Оставить отзыв">
+          <div class="form-card">
+            <div class="form-card__title">Оставьте отзыв</div>
+
+            <label class="form-card__label" for="revName">Ваше имя</label>
+            <input class="form-card__input" id="revName" type="text" placeholder="Введите имя">
+
+            <label class="form-card__label" for="revText">Ваш отзыв</label>
+            <textarea class="form-card__textarea" id="revText" rows="5"
+              placeholder="Поделитесь своими впечатлениями..."></textarea>
+
+            <div class="form-card__label">Оценка</div>
+            <div class="rate" data-rate>
+              <button class="rate__star" type="button" data-star="1" aria-label="1 звезда">
+                <img src="./components/svg/star_stroke.svg" alt="" aria-hidden="true">
+              </button>
+              <button class="rate__star" type="button" data-star="2" aria-label="2 звезды">
+                <img src="./components/svg/star_stroke.svg" alt="" aria-hidden="true">
+              </button>
+              <button class="rate__star" type="button" data-star="3" aria-label="3 звезды">
+                <img src="./components/svg/star_stroke.svg" alt="" aria-hidden="true">
+              </button>
+              <button class="rate__star" type="button" data-star="4" aria-label="4 звезды">
+                <img src="./components/svg/star_stroke.svg" alt="" aria-hidden="true">
+              </button>
+              <button class="rate__star" type="button" data-star="5" aria-label="5 звёзд">
+                <img src="./components/svg/star_stroke.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+
+            <button class="form-card__btn" type="button">Отправить отзыв</button>
+
+            <div class="form-card__hr"></div>
+
+            <div class="form-card__rating">
+              <img src="./components/svg/star_fill.svg" alt="" aria-hidden="true">
+              <span><b>4.6</b> из 5 на основе <b>196</b> отзывов</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!--------------------------------------------- FAQ --------------------------------------------->
+  <section class="faq" id="faq" aria-label="Часто задаваемые вопросы">
+    <div class="faq__container">
+      <!-- Заголовок как в прошлых секциях -->
+      <div class="section-title">
+        <img class="section-title__icon" src="./components/svg/biker.svg" alt="" aria-hidden="true">
+        <h2 class="section-title__text">Часто задаваемые вопросы</h2>
+      </div>
+
+      <div class="faq__list" data-faq>
+        <article class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q__text">Нужны ли права?</span>
+            <span class="faq-q__chev" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a" role="region">
+            <p>
+              Для управления нашими электробайками права не требуются! Однако вам должно быть не менее 18 лет для проката байков. 
+              Мы проводим обязательный инструктаж перед каждой поездкой.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q__text">Что, если я никогда не ездил?</span>
+            <span class="faq-q__chev" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a" role="region">
+            <p>
+              Не переживайте! Большинство наших клиентов - новички. Мы предоставляем полный инструктаж по управлению байком, технике безопасности и особенностям маршрута. 
+              Навыков управления велосипедом достаточно для быстрого и лёгкого старта.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q__text">Что входит в стоимость?</span>
+            <span class="faq-q__chev" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a" role="region">
+            <p>
+              В стоимость аренды входит: сам электробайк, полный комплект защитной экипировки (шлем, перчатки, наколенники), базовая страховка, инструктаж, техническая поддержка на трассе. 
+              Также в стоимость входит сопровождение гида, фото и видео съемка на камеры GoPro.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q__text">Что надеть и взять с собой?</span>
+            <span class="faq-q__chev" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a" role="region">
+            <p>
+              Рекомендуем: удобную спортивную одежду (джинсы, толстовка), закрытую обувь на плоской подошве (кроссовки, ботинки), солнцезащитный крем, воду. Всю защитную экипировку мы предоставляем. 
+              Не забудьте документ, удостоверяющий личность, и денежные средства для оплаты.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="faq__footer">
+        <div class="faq__hint">Не нашли ответ на свой вопрос?</div>
+        <a class="faq__link" href="#contacts">Свяжитесь с нами →</a>
+      </div>
+    </div>
+  </section>
+
+  <!--------------------------------------------- Map --------------------------------------------->
+  <section class="findus" id="findus" aria-label="Как нас найти">
+    <div class="findus__container">
+      <!-- Заголовок как в прошлых секциях -->
+      <div class="section-title">
+        <img class="section-title__icon" src="./components/svg/biker.svg" alt="" aria-hidden="true">
+        <h2 class="section-title__text">Как нас найти</h2>
+      </div>
+
+      <!-- Карта -->
+      <a class="findus__map" href="https://yandex.by/maps/org/e_ride/239944247734/?ll=23.812518%2C53.720054&z=14.7" target="_blank" rel="noopener noreferrer" aria-label="Открыть на Яндекс Картах">
+        <iframe
+          class="findus__iframe"
+          src="https://yandex.by/map-widget/v1/?ll=23.812518%2C53.720054&z=14.7&pt=23.812518,53.720054,pm2rdm"
+          frameborder="0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-hidden="true"
+          tabindex="-1"
+        ></iframe>
+
+        <!-- затемнение/виньетка как в макете -->
+        <span class="findus__mapfx" aria-hidden="true"></span>
+
+        <!-- маркер по центру (как на скрине) -->
+        <span class="findus__pin" aria-hidden="true"></span>
+      </a>
+
+      <!-- Адрес под картой -->
+      <a class="findus__addr"
+         href="https://yandex.by/maps/org/e_ride/239944247734/?ll=23.812518%2C53.720054&z=14.7"
+         target="_blank" rel="noopener noreferrer">
+        <img class="findus__addr-ico" src="./components/svg/map_point.svg" alt="" aria-hidden="true">
+        <span class="findus__addr-text">г. Гродно, ул. Санаторная, 16</span>
+        <span class="findus__addr-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!--------------------------------------------- Footer --------------------------------------------->
+  <footer class="footer" id="contacts">
+    <div class="footer__inner">
+      <!-- left -->
+      <div class="footer__brand">
+        <img class="footer__logo" src="./components/logo.png" alt="E-RIDE">
+        <p class="footer__text">
+          Поездка с нами — это экстремально,<br>
+          живописно, незабываемо!
+        </p>
+
+        <div class="footer__item">
+          <img class="footer__ico" src="./components/svg/adres.svg" alt="" aria-hidden="true">
+          <div class="footer__text">
+            г.Гродно, ул.Санаторная,16<br>
+            (в районе Гродненского КСМ)
+          </div>
+        </div>
+      </div>
+
+      <!-- contacts -->
+      <div class="footer__col">
+        <h3 class="footer__title">Контакты</h3>
+
+        <a class="footer__item footer__link" href="tel:+375298882764">
+          <img class="footer__ico" src="./components/svg/phone.svg" alt="" aria-hidden="true">
+          <span class="footer__text">+375 (29) 888-27-64</span>
+        </a>
+
+        <a class="footer__item footer__link" href="mailto:karting.grodno@gmail.com">
+          <img class="footer__ico" src="./components/svg/mail.svg" alt="" aria-hidden="true">
+          <span class="footer__text">karting.grodno@gmail.com</span>
+        </a>
+      </div>
+
+      <!-- schedule -->
+      <div class="footer__col">
+        <h3 class="footer__title">Режим работы</h3>
+
+        <div class="footer__item footer__item--top">
+          <img class="footer__ico" src="./components/svg/work_time.svg" alt="" aria-hidden="true">
+          <div class="footer__text">
+            С 1 ноября по 31 марта (зимний период)<br>
+            С 1 апреля по 31 октября (летний период)<br>
+            Понедельник: выходной<br>
+            Вторник - воскресенье: с 10.00 до 20.00<br>
+            Уточнять по телефону
+          </div>
+        </div>
+      </div>
+
+      <!-- socials -->
+      <div class="footer__col">
+        <h3 class="footer__title">Социальные сети</h3>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.instagram.com/e_ride_grodno/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="./components/svg/instagram.svg" alt="">
+          </a>
+
+          <a class="footer__social" href="https://www.facebook.com/sergey.sheronov.2025/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="./components/svg/facebook.svg" alt="">
+          </a>
+
+          <a class="footer__social" href="https://api.whatsapp.com/message/WKIGN25URJ76C1?autoload=1&app_absent=0&utm_source=ig" target="_blank" rel="noopener noreferrer" aria-label="VK/WhatsApp link">
+            <img src="./components/svg/vk.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__line"></div>
+
+    <div class="footer__copy">
+      © 2025. Прокат внедорожных электромотоциклов "E-ride". Все права защищены.
+    </div>
+  </footer>
 
   <!-- JS отдельным файлом -->
   <script src="./js/menu.js" defer></script>
@@ -798,5 +1151,8 @@
   <script src="./js/why-scroll.js" defer></script>
   <script src="./js/events.js" defer></script>
   <script src="./js/marquee.js" defer></script>
+  <script src="./js/comments.js" defer></script>
+  <script src="./js/faq.js" defer></script>
+  <script src="./js/footer.js" defer></script>
 </body>
 </html>
